@@ -16,6 +16,17 @@ public class Main {
             InetAddress host = InetAddress.getByName("heartofgold.morris.umn.edu");
             DatagramSocket socket = new DatagramSocket(port);
 
+            while (true) {
+                for (int i = 0; i < buffer.length; i++) {
+                    if (buffer[i] == 0){
+                        header.add(buffer);
+                    }
+                    else {
+                        data.add(buffer);
+                    }
+                }
+            }
+
 
 
         } catch (UnknownHostException e) {
