@@ -17,13 +17,11 @@ public class Main {
             DatagramSocket socket = new DatagramSocket(port);
 
             while (true) {
-                for (int i = 0; i < buffer.length; i++) {
-                    if (buffer[i] == 0){
+                if (buffer[0] == 0){
                         header.add(buffer);
-                    }
-                    else {
-                        data.add(buffer);
-                    }
+                }
+                else {
+                    data.add(buffer);
                 }
             }
 
